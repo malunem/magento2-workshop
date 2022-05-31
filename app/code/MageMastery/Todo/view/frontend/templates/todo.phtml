@@ -17,12 +17,15 @@ use \MageMastery\Todo\Block\Template;
     Task 3
   </li>
 </ul>
+<div data-bind="scope: 'pippo'">
+  <!-- ko template: getTemplate() --><!-- /ko -->
+</div>
 <script type="text/x-magento-init">
   {
     "*": {
       "Magento_Ui/js/core/app": {
         "components": {
-          "todo": {
+          "pippo": {
             "component": "MageMastery_Todo/js/view/todo",
             "template": "MageMastery_Todo/todo"
           }
