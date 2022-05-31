@@ -1,2 +1,6 @@
-<h2>UI Component Template</h2>
-
+<ul>
+  <li repeat="foreach: tasks, item: 'task'">
+    <!-- <span translate="task().label" /> -->
+    <span data-bind="text: task().label" />
+  </li>
+</ul>

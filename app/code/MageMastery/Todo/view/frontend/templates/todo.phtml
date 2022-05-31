@@ -17,7 +17,7 @@ use \MageMastery\Todo\Block\Template;
     Task 3
   </li>
 </ul>
-<div data-bind="scope: 'pippo'">
+<div data-bind="scope: 'todo'">
   <!-- ko template: getTemplate() --><!-- /ko -->
 </div>
 <script type="text/x-magento-init">
@@ -25,9 +25,14 @@ use \MageMastery\Todo\Block\Template;
     "*": {
       "Magento_Ui/js/core/app": {
         "components": {
-          "pippo": {
+          "todo": {
             "component": "MageMastery_Todo/js/view/todo",
-            "template": "MageMastery_Todo/todo"
+            "template": "MageMastery_Todo/todo",
+            "tasks": [
+              {"label": "Task 4"},
+              {"label": "Task 5"},
+              {"label": "Task 6"}
+            ]
           }
         }
       }
