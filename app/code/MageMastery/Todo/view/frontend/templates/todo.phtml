@@ -23,19 +23,7 @@ use \MageMastery\Todo\Block\Template;
 <script type="text/x-magento-init">
   {
     "*": {
-      "Magento_Ui/js/core/app": {
-        "components": {
-          "todo": {
-            "component": "MageMastery_Todo/js/view/todo",
-            "template": "MageMastery_Todo/todo",
-            "tasks": [
-              {"label": "Task 4"},
-              {"label": "Task 5"},
-              {"label": "Task 6"}
-            ]
-          }
-        }
-      }
+      "Magento_Ui/js/core/app": <?= $block->getJsLayout(); ?>
     }
   }
 </script>
