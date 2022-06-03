@@ -7,7 +7,8 @@ define([
 
   return Component.extend({
     "defaults": {
-      "tasks": [
+      newTaskLabel: '',
+      tasks: [
         {id: 1, label: "Task 1", status: false},
         {id: 2, label: "Task 2", status: false},
         {id: 3, label: "Task 3", status: false},
@@ -16,7 +17,7 @@ define([
     },
 
     initObservable: function() {
-      this._super().observe(["tasks"]);
+      this._super().observe(["tasks", "newTaskLabel"]);
 
       return this;
     },
@@ -59,6 +60,18 @@ define([
           }
         }
       });
+    },
+
+    addTask: function() {
+      this.tasks.push(
+        {
+          id: Math.floor(Math.random()*100), 
+          label: this.newTaskLabel(), 
+          status: false
+        }
+      );
+      
+      this.newTaskLabel('');
     }
   });
 });
